@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { FilterContact } from './FilterContact/FilterContact';
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -58,9 +59,9 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <h2>Phonebook</h2>
+        <h2 className={css.header}>Phonebook</h2>
         <ContactForm onSubmit={this.addContact} />
-        <h3>Contacts</h3>
+        <h3 className={css.header}>Contacts</h3>
         <FilterContact inputChange={this.filterChange} />
         <ContactList
           contacts={this.showContact()}
